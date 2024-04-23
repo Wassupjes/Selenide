@@ -7,38 +7,20 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 
 
 
 public class CardDelivery {
-    private WebDriver driver;
-
     @BeforeAll
     static void setupAll() {
         WebDriverManager.chromedriver().setup();
-    }
-
-    @BeforeEach
-    void setUp() {
-        driver = new ChromeDriver();
-
-    }
-
-    @AfterEach
-    void tearDown() {
-        driver.quit();
-        driver = null;
     }
 
     private String dateMeeting(long date, String pattern) {
