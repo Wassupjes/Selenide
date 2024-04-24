@@ -1,10 +1,6 @@
 package ru.netology.Selenide;
 
 import com.codeborne.selenide.Condition;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
@@ -18,10 +14,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 
 public class CardDelivery {
-    @BeforeAll
-    static void setupAll() {
-        WebDriverManager.chromedriver().setup();
-    }
 
     private String dateMeeting(long date, String pattern) {
         return LocalDate.now().plusDays(date).format(DateTimeFormatter.ofPattern(pattern));
